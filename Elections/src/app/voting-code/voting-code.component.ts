@@ -1,40 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../authentication.service';
-import { AlertService } from '../alert.service';
-import { first } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass']
+  selector: 'app-voting-code',
+  templateUrl: './voting-code.component.html',
+  styleUrls: ['./voting-code.component.sass']
 })
-export class LoginComponent implements OnInit {
-  loginForm;
+export class VotingCodeComponent implements OnInit {
+  votingCodeForm;
   loading;
   submitted;
   returnUrl;
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
-              private router: Router,
-              private authenticationService: AuthenticationService,
-              private alertService: AlertService) {
-    this.loginForm = new FormGroup(
+              private router: Router) {
+    this.votingCodeForm = new FormGroup(
       {
-        id: new FormControl(),
-        username: new FormControl(),
-        password: new FormControl()
+        votingCode: new FormControl()
       });
     this.loading = false;
     this.submitted = false;
   }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+    this.votingCodeForm = this.formBuilder.group({
+      votingCode: ['', Validators.required]
   });
 
   // get return url from route parameters or default to '/'
@@ -42,12 +34,12 @@ export class LoginComponent implements OnInit {
   }
 
   get formControls() {
-    return this.loginForm.controls;
+    return this.votingCodeForm.controls;
   }
   onSubmit() {
     this.submitted = true;
     // stop here if form is invalid
-    if (this.loginForm.invalid) {
+    if (this.votingCodeForm.invalid) {
           return;
     }
     this.loading = true;
@@ -61,10 +53,10 @@ export class LoginComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
             });*/
-    if (this.formControls.username.value === 'admin') {
-      this.returnUrl = '/voters-list';
+    if (this.formControls.votingCode.value === 'q1w2e3') {
+      this.returnUrl = '/voting-board';
     } else {
-      this.returnUrl = '/voting-code';
+      this.returnUrl = '/error';
     }
     this.router.navigate([this.returnUrl]);
   }
