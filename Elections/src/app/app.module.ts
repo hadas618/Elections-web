@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VotingCodeComponent } from './voting-code/voting-code.component';
 import { VotersListComponent } from './voters-list/voters-list.component';
 import { VotingBoardComponent } from './voting-board/voting-board.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { VotingBoardComponent } from './voting-board/voting-board.component';
     LoginComponent,
     VotingCodeComponent,
     VotersListComponent,
-    VotingBoardComponent
+    VotingBoardComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

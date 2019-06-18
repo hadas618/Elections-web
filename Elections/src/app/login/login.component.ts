@@ -62,7 +62,12 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
             });*/
     if (this.formControls.username.value === 'admin') {
-      this.returnUrl = '/voters-list';
+      if (this.formControls.password.value === 'admin'){
+        this.returnUrl = '/voters-list';
+      } else {
+        this.alertService.error('error');
+        this.loading = false;
+      }
     } else {
       this.returnUrl = '/voting-code';
     }
