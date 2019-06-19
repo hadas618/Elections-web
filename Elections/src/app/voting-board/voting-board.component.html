@@ -1,13 +1,22 @@
-<div class="sample-column card-wrapper">
+<div  alt="Avatar">
+    <div class="container">
+      <div *ngFor="let votingCard of votingCardList">
+        <app-voting-card [votingCard]="votingCard"></app-voting-card>
+      </div>
+    </div>
+  </div>
+
+
+
     <!--<igx-card>
         <igx-card-header>
             <h3 igxCardHeaderTitle>{{ card.title }}</h3>
             <h5 igxCardHeaderSubtitle>{{ card.subtitle }}</h5>
         </igx-card-header>
 
-        <igx-card-content>-->
-            <p><!--{{ card.content }}-->א</p>
-        <!--</igx-card-content>
+        <igx-card-content>
+            <p>{{ card.content }}</p>
+        </igx-card-content>
 
         <igx-card-actions>
             <button igxButton igxRipple *ngFor="let button of card.buttons">{{ button }}</button>
@@ -19,5 +28,5 @@
             </button>
         </igx-card-actions>
 
-    </igx-card>-->
-</div>
+    </igx-card>
+</div>-->
