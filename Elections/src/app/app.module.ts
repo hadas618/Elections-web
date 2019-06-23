@@ -13,6 +13,7 @@ import { VotersListComponent } from './voters-list/voters-list.component';
 import { VotingBoardComponent } from './voting-board/voting-board.component';
 import { AlertComponent } from './alert/alert.component';
 import { VotingCardComponent } from './voting-card/voting-card.component';
+import { VotingCardChosenComponent } from './voting-card-chosen/voting-card-chosen.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { VotingCardComponent } from './voting-card/voting-card.component';
     VotersListComponent,
     VotingBoardComponent,
     AlertComponent,
-    VotingCardComponent
+    VotingCardComponent,
+    VotingCardChosenComponent
   ],
   imports: [
     BrowserModule,
