@@ -5,7 +5,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { VotingCodeComponent } from './voting-code/voting-code.component';
 import { VotersListComponent } from './voters-list/voters-list.component';
 import { VotingBoardComponent } from './voting-board/voting-board.component';
-import { VotingCardComponent } from './voting-card/voting-card.component';
+import { VotingCardChosenComponent } from './voting-card-chosen/voting-card-chosen.component';
 
 const routes: Routes = [
   // { path: 'login', component: LoginComponent, canActivate: [AuthGuard]--put attantion to remove the guard if not used},
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'voting-code', component: VotingCodeComponent },
   { path: 'voters-list', component: VotersListComponent },
   { path: 'voting-board', component: VotingBoardComponent, children: [
-     { path: ':votingLetter', component: VotingCardComponent}
+     { path: ':votingLetter', component: VotingCardChosenComponent}
 ] },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }

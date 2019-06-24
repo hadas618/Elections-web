@@ -10,12 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VotingCardComponent implements OnInit {
   @Input() votingCard: VotingCard;
-  letter;
-  constructor(private votingCardData: VotingCardDataService, private route: ActivatedRoute) {
-    this.route.params.subscribe(params => {
-      this.letter = params.votingLetter
-      this.card = service.getCard(letter)
-    });
+  constructor() {
   }
 
   ngOnInit(): void {

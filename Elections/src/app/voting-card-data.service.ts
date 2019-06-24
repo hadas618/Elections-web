@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { VotingCard } from './votingCard';
-
 @Injectable({
   providedIn: 'root'
 })
 export class VotingCardDataService {
+  
   votingCardList: VotingCard[];
   constructor() {
     this.votingCardList = [{letter: 'a', numberOfVotes: 100, numberOfSeats: 2},
