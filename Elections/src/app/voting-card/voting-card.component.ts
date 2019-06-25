@@ -12,6 +12,11 @@ export class VotingCardComponent implements OnInit {
   @Input() votingCard: VotingCard;
   constructor() {
   }
+  openDialog() {
+    this.votingCard.letter(this.votingCard,{
+      
+    });
+  }
 
   ngOnInit(): void {
       // this.votingCardData.getVotingCard(path)
