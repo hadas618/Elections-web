@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VotingCard } from '../votingCard';
 import { VotingCardDataService } from '../voting-card-data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { VotingCardChosenComponent } from '../voting-card-chosen/voting-card-chosen.component';
 
 @Component({
   selector: 'app-voting-board',
@@ -9,7 +11,7 @@ import { VotingCardDataService } from '../voting-card-data.service';
 })
 export class VotingBoardComponent implements OnInit {
   votingCardList: VotingCard[];
-  constructor(private votingCardDataService: VotingCardDataService) { }
+  constructor(private votingCardDataService: VotingCardDataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.votingCardList = this.votingCardDataService.getVotingCardList();
@@ -25,5 +27,10 @@ export class VotingBoardComponent implements OnInit {
                            {letter: 'j', numberOfVotes: 800, numberOfSeats: 8},
                           ];*/
   }
-
+  openDialog(letter: string) {
+    this.dialog.open(VotingCardChosenComponent, {
+      data: {
+        letter }
+      });
+  }
 }

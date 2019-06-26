@@ -14,6 +14,7 @@ import { VotingBoardComponent } from './voting-board/voting-board.component';
 import { AlertComponent } from './alert/alert.component';
 import { VotingCardComponent } from './voting-card/voting-card.component';
 import { VotingCardChosenComponent } from './voting-card-chosen/voting-card-chosen.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,17 @@ import { VotingCardChosenComponent } from './voting-card-chosen/voting-card-chos
     VotingCardComponent,
     VotingCardChosenComponent
   ],
+  entryComponents: [
+    VotingCardChosenComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
