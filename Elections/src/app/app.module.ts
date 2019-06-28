@@ -15,6 +15,10 @@ import { AlertComponent } from './alert/alert.component';
 import { VotingCardComponent } from './voting-card/voting-card.component';
 import { VotingCardChosenComponent } from './voting-card-chosen/voting-card-chosen.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SearchFieldsComponent } from './search-fields/search-fields.component';
+import { SingleSearchFieldComponent } from './single-search-field/single-search-field.component';
+import { OptionsButtonsComponent } from './options-buttons/options-buttons.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     VotingBoardComponent,
     AlertComponent,
     VotingCardComponent,
-    VotingCardChosenComponent
+    VotingCardChosenComponent,
+    SearchFieldsComponent,
+    SingleSearchFieldComponent,
+    OptionsButtonsComponent,
+    SearchResultsComponent
   ],
   entryComponents: [
     VotingCardChosenComponent

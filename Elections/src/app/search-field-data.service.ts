@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+import { SingleSearchField } from './SingleSearchField';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SearchFieldDataService {
+  searchFields: SingleSearchField[];
+  constructor() { 
+    this.searchFields = [{fieldCode: 'IdentityNumber', fieldName: 'Identity Number', fieldType: 'number'},
+                         {fieldCode: 'FirstName', fieldName: 'First Name', fieldType: 'text'},
+                         {fieldCode: 'LastName', fieldName: 'Last Name', fieldType: 'text'},
+                         {fieldCode: 'Address', fieldName: 'Address', fieldType: 'text'},
+                         {fieldCode: 'City', fieldName: 'City', fieldType: 'text'},
+                         {fieldCode: 'DidVote', fieldName: 'Did Vote?', fieldType: 'checkbox'}
+                        ];
+  }
+  getSearchFields() {
+    return this.searchFields;
+  }
+}
