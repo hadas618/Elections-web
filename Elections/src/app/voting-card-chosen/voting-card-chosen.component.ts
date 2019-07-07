@@ -3,6 +3,7 @@ import { VotingCardDataService } from '../voting-card-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { VotingCard } from '../votingCard';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 export interface DialogData {
   letter: string;
 }
@@ -23,6 +24,16 @@ letter;
     //this.votingCard.letter = data;
     this.letter = data.letter;
    }
+   public open(letter) {
+    alert('your choose is ' + letter + ' tanks for your choosen!');
+    /*letters = [
+      new letter(1, 'a'),
+      new letter(2, 'b'),
+      new letter(3, 'c'),
+      new letter(4, 'd')
+    ];
+    myLetters = this.letter[i]++;*/
+  }
 
   ngOnInit() {
   }
