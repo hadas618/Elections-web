@@ -6,8 +6,8 @@ import { SingleSearchField } from './SingleSearchField';
 })
 export class SearchFieldDataService {
   searchFields: SingleSearchField[];
-  constructor() { 
-    this.searchFields = [{fieldCode: 'IdentityNumber', fieldName: 'Identity Number', fieldType: 'number'},
+  constructor() {
+    this.searchFields = [{fieldCode: 'Id', fieldName: 'Id', fieldType: 'number'},
                          {fieldCode: 'FirstName', fieldName: 'First Name', fieldType: 'text'},
                          {fieldCode: 'LastName', fieldName: 'Last Name', fieldType: 'text'},
                          {fieldCode: 'Address', fieldName: 'Address', fieldType: 'text'},
