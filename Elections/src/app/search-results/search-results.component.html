@@ -1,11 +1,20 @@
-<mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="ID">
-  </mat-form-field>
-
+  <tr>
+  <ng-container *ngFor="let column of displayedColumnsName" matColumnDef="{{column}}">
+     <!-- <mat-header-cell *matHeaderCellDef> -->
+       <mat-form-field>
+      <!-- <span mat-sort-header>{{column | uppercase}}</span> -->
+       <input class="filter-input" matInput (keyup)="applyFilter($event.target.value)" placeholder="{{column}}" />
+      <!-- <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{column}}" /> -->
+    </mat-form-field>
+    <!-- </mat-header-cell> -->
+    <!-- <mat-cell *matCellDef="let row"> {{row[column]}}</mat-cell> -->
+  </ng-container>
+</tr>
+<tr>
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
-
+</tr>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
 

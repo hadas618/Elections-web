@@ -12,6 +12,7 @@ import { CitizenDataService } from '../citizen-data.service';
 })
 export class SearchResultsComponent implements OnInit {
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'address', 'city', 'didVote'];
+  displayedColumnsName: string[] = ['Id', 'First Name', 'Last Name', 'Address', 'City', 'Did Vote'];
   dataSource: MatTableDataSource<CitizenData>;
 
   @ViewChild(MatPaginator/*, {static: true}*/) paginator: MatPaginator;
