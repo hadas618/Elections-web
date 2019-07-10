@@ -1,19 +1,44 @@
-  <tr>
-  <ng-container *ngFor="let column of displayedColumnsName" matColumnDef="{{column}}">
+    <!-- <ng-container *ngFor="let column of displayedColumnsName" matColumnDef="{{column}}"> -->
      <!-- <mat-header-cell *matHeaderCellDef> -->
-       <mat-form-field>
+       <!-- <mat-form-field> -->
       <!-- <span mat-sort-header>{{column | uppercase}}</span> -->
-       <input class="filter-input" matInput (keyup)="applyFilter($event.target.value)" placeholder="{{column}}" />
+       <!-- <input class="filter-input" [formControl]="column" matInput (keyup)="applyFilters()" placeholder="{{column}}" /> -->
       <!-- <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{column}}" /> -->
-    </mat-form-field>
+    <!-- </mat-form-field> -->
     <!-- </mat-header-cell> -->
     <!-- <mat-cell *matCellDef="let row"> {{row[column]}}</mat-cell> -->
-  </ng-container>
-</tr>
-<tr>
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  <!-- </ng-container> -->
+  <tr>
+  <ng-container matColumnDef="id">
+      <mat-form-field>
+      <input matInput class="filter-input" [formControl]="idFilter"  placeholder="ID" />
+   </mat-form-field>
+ </ng-container>
+ <ng-container matColumnDef="firstName">
+  <mat-form-field>
+  <input matInput class="filter-input" [formControl]="firstNameFilter" placeholder="First Name" />
 </mat-form-field>
+</ng-container>
+<ng-container matColumnDef="lastName">
+  <mat-form-field>
+  <input matInput class="filter-input" [formControl]="lastNameFilter" placeholder="Last Name" />
+</mat-form-field>
+</ng-container>
+<ng-container matColumnDef="address">
+  <mat-form-field>
+  <input matInput class="filter-input" [formControl]="addressFilter" placeholder="Address" />
+</mat-form-field>
+</ng-container>
+<ng-container matColumnDef="city">
+  <mat-form-field>
+  <input matInput class="filter-input" [formControl]="cityFilter" placeholder="City" />
+</mat-form-field>
+</ng-container>
+<ng-container matColumnDef="vote">
+  <mat-form-field>
+  <input matInput class="filter-input" [formControl]="voteFilter" placeholder="Vote" />
+</mat-form-field>
+</ng-container>
 </tr>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
@@ -49,9 +74,9 @@
     </ng-container>
 
     <!-- Color Column -->
-    <ng-container matColumnDef="didVote">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Did vote? </th>
-      <td mat-cell *matCellDef="let row"> {{row.didVote}} </td>
+    <ng-container matColumnDef="vote">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Vote? </th>
+      <td mat-cell *matCellDef="let row"> {{row.vote}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -4,5 +4,5 @@ export class CitizenData{
   lastName: string;
   address: string;
   city: string;
-  didVote: boolean;
+  vote: boolean;
 }

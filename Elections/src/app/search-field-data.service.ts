@@ -12,7 +12,7 @@ export class SearchFieldDataService {
                          {fieldCode: 'LastName', fieldName: 'Last Name', fieldType: 'text'},
                          {fieldCode: 'Address', fieldName: 'Address', fieldType: 'text'},
                          {fieldCode: 'City', fieldName: 'City', fieldType: 'text'},
-                         {fieldCode: 'DidVote', fieldName: 'Did Vote?', fieldType: 'checkbox'}
+                         {fieldCode: 'Vote', fieldName: 'Vote?', fieldType: 'checkbox'}
                         ];
   }
   getSearchFields() {
