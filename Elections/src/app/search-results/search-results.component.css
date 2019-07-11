@@ -10,3 +10,11 @@ table {
 td, th {
   width: 16.66%;
 }
+
+.header {
+  padding: 5px;
+}
+
+.filter {
+  display: block;
+}
