@@ -3,7 +3,7 @@ table {
 }
 
 .mat-form-field {
-  font-size: 14px;
+  /* font-size: 14px; */
   width: 100%;
 }
 
@@ -17,4 +17,8 @@ td, th {
 
 .filter {
   display: block;
+}
+
+.padding-table {
+  padding-top: 10px;
 }
