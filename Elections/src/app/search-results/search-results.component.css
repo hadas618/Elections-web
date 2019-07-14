@@ -22,3 +22,7 @@ td, th {
 .padding-table {
   padding-top: 10px;
 }
+
+.margin-table {
+  margin-bottom: 15px;
+}
