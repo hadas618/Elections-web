@@ -24,7 +24,7 @@ export class SearchResultsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(citizenDataService: CitizenDataService) {
+  constructor(private citizenDataService: CitizenDataService) {
     this.dataSource = new MatTableDataSource(citizenDataService.getSearchResults());
   }
 
@@ -74,5 +74,14 @@ export class SearchResultsComponent implements OnInit {
                                      data.city.toString().trim().toLowerCase().indexOf(searchString.city.toLowerCase()) !== -1 &&
                                      data.vote.toString().trim().toLowerCase().indexOf(searchString.vote.toLowerCase()) !== -1; };
     return myFilterPredicate;
+  }
+  dataChanging(){
+    if (this.dataSource.filteredData.length===1)
+    {
+      (<HTMLInputElement> document.getElementById("updateVoterBtn")).disabled = false;
+      this.citizenDataService.setChooseUpdateVoter(this.dataSource.data[0]);
+    }
+    else
+      (<HTMLInputElement> document.getElementById("updateVoterBtn")).disabled = true;
   }
 }

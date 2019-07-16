@@ -62,6 +62,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { ExitVotingComponent } from './exit-voting/exit-voting.component';
+import { UpdateVoterComponent } from './update-voter/update-voter.component';
 
 @NgModule({
   declarations: [
@@ -77,10 +78,12 @@ import { ExitVotingComponent } from './exit-voting/exit-voting.component';
     SingleSearchFieldComponent,
     OptionsButtonsComponent,
     SearchResultsComponent,
-    ExitVotingComponent
+    ExitVotingComponent,
+    UpdateVoterComponent
   ],
   entryComponents: [
-    VotingCardChosenComponent
+    VotingCardChosenComponent,
+    UpdateVoterComponent
   ],
   imports: [
     BrowserModule,

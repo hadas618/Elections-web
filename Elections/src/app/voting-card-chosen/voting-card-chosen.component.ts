@@ -4,10 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { VotingCard } from '../votingCard';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
-export interface DialogData {
-  letter: string;
-}
-
+import { DialogData } from '../DialogData';
 @Component({
   selector: 'app-voting-card-chosen',
   templateUrl: './voting-card-chosen.component.html',

@@ -7,6 +7,7 @@ import { CitizenData } from './CitizenData';
 })
 export class CitizenDataService {
   searchResults: Array<CitizenData> = [];
+  chooseUpdateVoter: CitizenData;
   constructor() {
     this.searchResults = [
       {id: '204466783', firstName: 'Hadas', lastName: 'Dahan', address: 'Harakefet 18', city: 'Holon', vote: true},
@@ -41,4 +42,10 @@ export class CitizenDataService {
   getSearchResults() {
     return this.searchResults;
     }
+  setChooseUpdateVoter(citizenData: CitizenData){
+    this.chooseUpdateVoter=citizenData;
+  }
+  getChooseUpdateVoter(){
+    return this.chooseUpdateVoter;
+  }
 }
