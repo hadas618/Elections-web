@@ -8,13 +8,14 @@ import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm;
+  loginForm: FormGroup;
   loading;
   submitted;
   returnUrl;
+  valid: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
       });
     this.loading = false;
     this.submitted = false;
+    this.valid = true;
   }
 
   ngOnInit() {
@@ -67,10 +69,14 @@ export class LoginComponent implements OnInit {
       } else {
         this.alertService.error('error');
         this.loading = false;
+        this.valid = false;
       }
     } else {
       this.returnUrl = '/voting-code';
     }
     this.router.navigate([this.returnUrl]);
+  }
+  changeValidation(){
+    this.valid = true;
   }
 }

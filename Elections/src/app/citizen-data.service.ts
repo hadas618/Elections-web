@@ -48,4 +48,7 @@ export class CitizenDataService {
   getChooseUpdateVoter(){
     return this.chooseUpdateVoter;
   }
+  updateVoter(citizenDataId:string){
+    this.searchResults.find(citizenData => citizenData.id === citizenDataId).vote=true;
+  }
 }
