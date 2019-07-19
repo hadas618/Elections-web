@@ -8,6 +8,7 @@ import { CitizenData } from './CitizenData';
 export class CitizenDataService {
   searchResults: Array<CitizenData> = [];
   chooseUpdateVoter: CitizenData;
+  ballotState: boolean;
   constructor() {
     this.searchResults = [
       {id: '204466783', firstName: 'Hadas', lastName: 'Dahan', address: 'Harakefet 18', city: 'Holon', vote: true},
@@ -38,6 +39,7 @@ export class CitizenDataService {
       {id: '363636363', firstName: 'Michael', lastName: 'Ben-Porat', address: 'Povarsky 2', city: 'Ashklon', vote: true},
       {id: '363636363', firstName: 'Michael', lastName: 'Ben-Porat', address: 'Povarsky 2', city: 'Ashklon', vote: true},
       {id: '363636363', firstName: 'Michael', lastName: 'Ben-Porat', address: 'Povarsky 2', city: 'Ashklon', vote: true}];
+      this.ballotState=true;
   }
   getSearchResults() {
     return this.searchResults;
@@ -50,5 +52,11 @@ export class CitizenDataService {
   }
   updateVoter(citizenDataId:string){
     this.searchResults.find(citizenData => citizenData.id === citizenDataId).vote=true;
+  }
+  updateBallotState() {
+    this.ballotState=false;
+  }
+  getBallotState() {
+    return this.ballotState;
   }
 }

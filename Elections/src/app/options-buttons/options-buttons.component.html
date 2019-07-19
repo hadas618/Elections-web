@@ -1,5 +1,5 @@
 <div>
   <button id="updateVoterBtn" class="btn option-btn" mat-button disabled (click)="openDialog()">Update Voter</button>
-  <button id="ballotBtn" class="btn option-btn" mat-button>Ballot</button>
-  <button id="resultsOfElectionsBtn" class="btn option-btn" mat-button>Results of Elections</button>
+  <button id="calculateResultsBtn" class="btn option-btn" mat-button (click)="calculateResults()" [disabled]="!ballotState">Calculate Results</button>
+  <button id="resultsOfElectionsBtn" class="btn option-btn" mat-button (click)="openElectionsResults()">Results of Elections</button>
 </div>

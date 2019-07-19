@@ -31,7 +31,8 @@ export class UpdateVoterComponent implements OnInit {
     (<HTMLInputElement> document.getElementById("updateVoterBtn")).disabled = true;
     this.citizenDataService.updateVoter(this.citizenData.id);
     this.returnUrl = '/voting-board';
-    this.router.navigate([]).then(result => {  window.open(this.returnUrl, '_blank'); });
+    //this.router.navigate([]).then(result => {  window.open(this.returnUrl, '_blank'); });
+    this.router.navigate([this.returnUrl]);
     this.dialogRef.close();
   }
   cancelChoose(){

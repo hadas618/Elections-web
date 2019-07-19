@@ -63,6 +63,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { ExitVotingComponent } from './exit-voting/exit-voting.component';
 import { UpdateVoterComponent } from './update-voter/update-voter.component';
+import { ElectionsResultsComponent } from './elections-results/elections-results.component';
+import { VotingCardResultsComponent } from './voting-card-results/voting-card-results.component';
+import { DetailsElectionsResultsComponent } from './details-elections-results/details-elections-results.component';
+import { GraphElectionsResultsComponent } from './graph-elections-results/graph-elections-results.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +83,11 @@ import { UpdateVoterComponent } from './update-voter/update-voter.component';
     OptionsButtonsComponent,
     SearchResultsComponent,
     ExitVotingComponent,
-    UpdateVoterComponent
+    UpdateVoterComponent,
+    ElectionsResultsComponent,
+    VotingCardResultsComponent,
+    DetailsElectionsResultsComponent,
+    GraphElectionsResultsComponent
   ],
   entryComponents: [
     VotingCardChosenComponent,

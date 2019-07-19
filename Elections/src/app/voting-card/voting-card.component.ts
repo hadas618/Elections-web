@@ -10,10 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VotingCardComponent implements OnInit {
   @Input() votingCard: VotingCard;
+  @Input() source: string;
+  visible: boolean;  
   constructor() {
   }
 
   ngOnInit(): void {
+    if (this.source==='results')
+      this.visible = true;
+    else
+      this.visible = false;
       // this.votingCardData.getVotingCard(path)
       //     .subscribe(
       //         votingCard => {

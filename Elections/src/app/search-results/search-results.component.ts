@@ -76,7 +76,8 @@ export class SearchResultsComponent implements OnInit {
     return myFilterPredicate;
   }
   dataChanging(){
-    if (this.dataSource.filteredData.length===1 && this.dataSource.filteredData[0].vote===false)
+    if (this.dataSource.filteredData.length===1 && this.dataSource.filteredData[0].vote===false
+      &&this.citizenDataService.getBallotState())
     {
       (<HTMLInputElement> document.getElementById("updateVoterBtn")).disabled = false;
       this.citizenDataService.setChooseUpdateVoter(this.dataSource.filteredData[0]);

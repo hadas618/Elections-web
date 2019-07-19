@@ -21,6 +21,7 @@ index: string;
    }
    public open(letter) {
        this.votingCardList.find(votingCard => votingCard.letter === letter).numberOfVotes++;
+       this.dialogRef.close();
   }
   public logOut() {
     this.dialogRef.close();

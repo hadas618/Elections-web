@@ -1,4 +1,6 @@
 <div class="card">
     <h4><b>{{votingCard.letter}}</b></h4>
     <p>shem miflaga</p>
+    <h5 *ngIf="visible">Votes: {{votingCard.numberOfVotes}}</h5>
+    <h5 *ngIf="visible">Seats: {{votingCard.numberOfSeats}}</h5>
 </div>
