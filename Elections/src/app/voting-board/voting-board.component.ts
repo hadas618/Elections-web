@@ -7,7 +7,7 @@ import { VotingCardChosenComponent } from '../voting-card-chosen/voting-card-cho
 @Component({
   selector: 'app-voting-board',
   templateUrl: './voting-board.component.html',
-  styleUrls: ['./voting-board.component.css']
+  styleUrls: ['./voting-board.component.scss']
 })
 export class VotingBoardComponent implements OnInit {
   votingCardList: VotingCard[];
@@ -17,7 +17,7 @@ export class VotingBoardComponent implements OnInit {
 
   ngOnInit() {
     this.votingCardList = this.votingCardDataService.getVotingCardList();
-    this.source='board';
+    this.source= 'board';
   }
   openDialog(letter: string) {
     this.dialog.open(VotingCardChosenComponent, {

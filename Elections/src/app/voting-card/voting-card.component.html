@@ -1,6 +1,18 @@
-<div class="card">
+<!-- <div class="card">
     <h4><b>{{votingCard.letter}}</b></h4>
     <p>shem miflaga</p>
     <h5 *ngIf="visible">Votes: {{votingCard.numberOfVotes}}</h5>
     <h5 *ngIf="visible">Seats: {{votingCard.numberOfSeats}}</h5>
-</div>
+</div> -->
+  <mat-card class="box" >
+    <mat-card-header>
+      <mat-card-title>{{votingCard.letter}}</mat-card-title>
+      <mat-card-subtitle>shem miflaga</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+    </mat-card-content>
+      <h5 *ngIf="visible">Votes: {{votingCard.numberOfVotes}}</h5>
+      <h5 *ngIf="visible">Seats: {{votingCard.numberOfSeats}}</h5>
+
+  </mat-card>
