@@ -1,5 +1,31 @@
 <div>
-  <button id="updateVoterBtn" class="btn option-btn" mat-button disabled (click)="openDialog()">Update Voter</button>
-  <button id="calculateResultsBtn" class="btn option-btn" mat-button (click)="calculateResults()" [disabled]="!ballotState">Calculate Results</button>
-  <button id="resultsOfElectionsBtn" class="btn option-btn" mat-button (click)="openElectionsResults()">Results of Elections</button>
+  <button
+    id="updateVoterBtn"
+    class="btn option-btn"
+    mat-stroked-button
+    color="primary"
+    disabled
+    (click)="openDialog()"
+  >
+    Update Voter
+  </button>
+  <button
+    id="calculateResultsBtn"
+    class="btn option-btn"
+    mat-stroked-button
+    color="primary"
+    (click)="calculateResults()"
+    [disabled]="!(ballotState$ | async)"
+  >
+    Calculate Results
+  </button>
+  <button
+    id="resultsOfElectionsBtn"
+    class="btn option-btn"
+    mat-stroked-button
+    color="primary"
+    (click)="openElectionsResults()"
+  >
+    Results of Elections
+  </button>
 </div>
