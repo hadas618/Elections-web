@@ -8,7 +8,7 @@ import { CitizenDataService } from '../citizen-data.service';
 @Component({
   selector: 'app-update-voter',
   templateUrl: './update-voter.component.html',
-  styleUrls: ['./update-voter.component.sass']
+  styleUrls: ['./update-voter.component.scss']
 })
 export class UpdateVoterComponent implements OnInit {
   citizenData: CitizenData;
