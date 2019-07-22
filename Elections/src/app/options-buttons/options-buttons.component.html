@@ -4,7 +4,7 @@
     class="btn option-btn"
     mat-stroked-button
     color="primary"
-    disabled
+    [disabled]="!(voterState$ | async)"
     (click)="openDialog()"
   >
     Update Voter

@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class OptionsButtonsComponent implements OnInit {
   ballotState$: Observable<boolean>;
+  voterState$: Observable<boolean>;
   constructor(
     private citizenDataService: CitizenDataService,
     private votingCardDataService: VotingCardDataService,
@@ -23,6 +24,7 @@ export class OptionsButtonsComponent implements OnInit {
 
   ngOnInit() {
     this.ballotState$ = this.citizenDataService.ballotState$;
+    this.voterState$ = this.citizenDataService.voterState$;
   }
   openDialog() {
     let citizenData: CitizenData;
@@ -39,14 +41,8 @@ export class OptionsButtonsComponent implements OnInit {
     let votesPerSeats: number;
     let numberOfSeats: number;
     sumVotes = 0;
-    //this.citizenDataService.updateBallotState();
-   /* (<HTMLInputElement>(
-      document.getElementById('updateVoterBtn')
-    )).disabled = true;
-    (<HTMLInputElement>(
-      document.getElementById('calculateResultsBtn')
-    )).disabled = true;*/
-    this.citizenDataService.BallotState = false;
+    this.citizenDataService.ballotState = false;
+    this.citizenDataService.voterState = false;
     for (i = 0; i < this.votingCardDataService.votingCardList.length; i++)
       sumVotes += this.votingCardDataService.votingCardList[i].numberOfVotes;
     votesPerSeats = sumVotes / 120;

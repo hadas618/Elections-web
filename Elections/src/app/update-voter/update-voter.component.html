@@ -3,6 +3,6 @@
   <h4>ID: {{citizenData.id}}</h4>
   <h4>Name: {{citizenData.firstName+' '+citizenData.lastName}}</h4>
   <h3>Are you sure to continue?</h3>
-  <button id="oKChooseBtn" mat-raised-button (click)="okChoose()">OK</button>
+  <button id="oKChooseBtn" mat-raised-button (click)="okChoose()" [disabled]="!okState">OK</button>
   <button mat-raised-button (click)="cancelChoose()">Cancel</button>
 </div>

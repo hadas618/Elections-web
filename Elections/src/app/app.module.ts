@@ -67,6 +67,7 @@ import { ElectionsResultsComponent } from './elections-results/elections-results
 import { VotingCardResultsComponent } from './voting-card-results/voting-card-results.component';
 import { DetailsElectionsResultsComponent } from './details-elections-results/details-elections-results.component';
 import { GraphElectionsResultsComponent } from './graph-elections-results/graph-elections-results.component';
+import { VotingCardsListComponent } from './voting-cards-list/voting-cards-list.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { GraphElectionsResultsComponent } from './graph-elections-results/graph-
     ElectionsResultsComponent,
     VotingCardResultsComponent,
     DetailsElectionsResultsComponent,
-    GraphElectionsResultsComponent
+    GraphElectionsResultsComponent,
+    VotingCardsListComponent
   ],
   entryComponents: [
     VotingCardChosenComponent,

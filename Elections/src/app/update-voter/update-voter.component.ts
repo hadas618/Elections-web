@@ -13,22 +13,23 @@ import { CitizenDataService } from '../citizen-data.service';
 export class UpdateVoterComponent implements OnInit {
   citizenData: CitizenData;
   returnUrl: string;
+  okState: boolean;
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData,
               private dialogRef: MatDialogRef<UpdateVoterComponent>,
               private route: ActivatedRoute,
               private router: Router,
               private citizenDataService:CitizenDataService) {
-    this.citizenData=data.citizenData;
    }
 
   ngOnInit() {
-    (<HTMLInputElement> document.getElementById("oKChooseBtn")).disabled = false;
+    this.citizenData=this.data.citizenData;
+    this.okState = true;
   }
 
   okChoose()
   {
-    (<HTMLInputElement> document.getElementById("oKChooseBtn")).disabled = true;
-    (<HTMLInputElement> document.getElementById("updateVoterBtn")).disabled = true;
+    this.citizenDataService.voterState = false;
+    this.okState = false;
     this.citizenDataService.updateVoter(this.citizenData.id);
     this.returnUrl = '/voting-board';
     //this.router.navigate([]).then(result => {  window.open(this.returnUrl, '_blank'); });

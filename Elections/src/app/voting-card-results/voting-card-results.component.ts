@@ -10,11 +10,12 @@ import { VotingCardDataService } from '../voting-card-data.service';
 export class VotingCardResultsComponent implements OnInit {
   votingCardResultsList: VotingCard[];
   source: string;
+  visibleResults: boolean;
   constructor(private votingCardDataService: VotingCardDataService) { }
 
   ngOnInit() {
     this.votingCardResultsList = this.votingCardDataService.getVotingCardList();
-    this.source='results';
+    this.visibleResults = true;
   }
 
 }

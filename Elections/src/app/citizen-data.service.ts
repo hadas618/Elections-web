@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CitizenDataService {
-  private searchResults: Array<CitizenData> = [
+  private initialSearchResults: Array<CitizenData> = [
     {
       id: '204466783',
       firstName: 'Hadas',
@@ -233,51 +233,58 @@ export class CitizenDataService {
       vote: true
     }
   ];
-  private subject: BehaviorSubject<CitizenData[]> = new BehaviorSubject([]);
+  private subjectSearchResults: BehaviorSubject<CitizenData[]> = new BehaviorSubject([]);
   private initialBallotState: boolean = true;
   private subjectBallotState: BehaviorSubject<boolean> = new BehaviorSubject(
     this.initialBallotState
   );
-  chooseUpdateVoter: CitizenData;
+  private initialVoterState: boolean = false;
+  private subjectVoterState: BehaviorSubject<boolean> = new BehaviorSubject(
+    this.initialVoterState
+  );
+  private initialChooseUpdateVoter: CitizenData;
+  private subjectChooseupdateVoter: BehaviorSubject<CitizenData> = new BehaviorSubject(
+    this.initialChooseUpdateVoter);
   constructor() {
-    let savedData = localStorage.getItem('data');
+    let savedData = localStorage.getItem('searchResults');
     if (!savedData) {
-      localStorage.setItem('data', JSON.stringify(this.searchResults));
-      this.subject.next(this.searchResults);
-
+      localStorage.setItem('searchResults', JSON.stringify(this.initialSearchResults));
+      this.subjectSearchResults.next(this.initialSearchResults);
+      
     } else {
-      this.subject.next(JSON.parse(savedData));
+      this.subjectSearchResults.next(JSON.parse(savedData));
     }
   }
-  getSearchResults() {
-    return this.searchResults;
-  }
   setChooseUpdateVoter(citizenData: CitizenData) {
-    this.chooseUpdateVoter = citizenData;
+    this.initialChooseUpdateVoter = citizenData;
   }
   getChooseUpdateVoter() {
-    return this.chooseUpdateVoter;
+    return this.initialChooseUpdateVoter;
   }
   updateVoter(citizenDataId: string) {
-    this.searchResults.find(
+    this.initialSearchResults.find(
       citizenData => citizenData.id === citizenDataId
     ).vote = true;
-    localStorage.setItem('data', JSON.stringify(this.searchResults));
-    this.subject.next(this.searchResults);
+    localStorage.setItem('searchResults', JSON.stringify(this.initialSearchResults));
+    this.subjectSearchResults.next(this.initialSearchResults);
   }
-  /*updateBallotState() {
-    this.initialBallotState = false;
-  }*/
-  getBallotState() {
-    return this.initialBallotState;
-  }
-  get data$(): Observable<CitizenData[]> {
-    return this.subject.asObservable();
+  get searchResults$(): Observable<CitizenData[]> {
+    return this.subjectSearchResults.asObservable();
   }
   get ballotState$(): Observable<boolean> {
     return this.subjectBallotState.asObservable();
   }
-  set BallotState(ballotState: boolean) {
+  get voterState$(): Observable<boolean> {
+    return this.subjectVoterState.asObservable();
+  }
+  set ballotState(ballotState: boolean) {
     this.subjectBallotState.next(ballotState);
+  }
+  set voterState(voterState: boolean) {
+    let ballotState: boolean;
+    this.ballotState$.subscribe(data => {
+      ballotState = data;
+    });
+    this.subjectVoterState.next(voterState&&ballotState);
   }
 }

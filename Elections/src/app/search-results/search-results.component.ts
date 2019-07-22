@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { CitizenData } from '../CitizenData';
 import { CitizenDataService } from '../citizen-data.service';
 import { FormControl } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search-results',
@@ -41,11 +41,10 @@ private subs: Subscription;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private citizenDataService: CitizenDataService) {
-    // this.dataSource = new MatTableDataSource(citizenDataService.getSearchResults());
   }
 
   ngOnInit() {
-    this.subs =  this.citizenDataService.data$.subscribe(data => {
+    this.subs =  this.citizenDataService.searchResults$.subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
     });
     this.dataSource.paginator = this.paginator;
@@ -133,18 +132,13 @@ private subs: Subscription;
   dataChanging() {
     if (
       this.dataSource.filteredData.length === 1 &&
-      this.dataSource.filteredData[0].vote === false &&
-      this.citizenDataService.getBallotState()
+      !this.dataSource.filteredData[0].vote
     ) {
-      (<HTMLInputElement>(
-        document.getElementById('updateVoterBtn')
-      )).disabled = false;
+      this.citizenDataService.voterState = true;
       this.citizenDataService.setChooseUpdateVoter(
         this.dataSource.filteredData[0]
       );
     } else
-      (<HTMLInputElement>(
-        document.getElementById('updateVoterBtn')
-      )).disabled = true;
+      this.citizenDataService.voterState = false;
   }
 }

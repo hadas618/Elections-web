@@ -12,7 +12,9 @@
     <mat-card-content>
 
     </mat-card-content>
-      <h5 *ngIf="visible">Votes: {{votingCard.numberOfVotes}}</h5>
-      <h5 *ngIf="visible">Seats: {{votingCard.numberOfSeats}}</h5>
-
+    <h5 *ngIf="visibleResults">
+      Votes: {{votingCard.numberOfVotes}}
+      <br/>
+      Seats: {{votingCard.numberOfSeats}}
+    </h5>
   </mat-card>

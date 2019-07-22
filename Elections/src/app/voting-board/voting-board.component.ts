@@ -12,12 +12,12 @@ import { VotingCardChosenComponent } from '../voting-card-chosen/voting-card-cho
 export class VotingBoardComponent implements OnInit {
   votingCardList: VotingCard[];
   dialogRef: MatDialogRef<VotingCardChosenComponent>;
-  source: string;
+  visibleResults: boolean;
   constructor(private votingCardDataService: VotingCardDataService, public dialog: MatDialog ) { }
 
   ngOnInit() {
     this.votingCardList = this.votingCardDataService.getVotingCardList();
-    this.source= 'board';
+    this.visibleResults= false;
   }
   openDialog(letter: string) {
     this.dialog.open(VotingCardChosenComponent, {
