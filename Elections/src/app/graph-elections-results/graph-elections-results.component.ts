@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-graph-elections-results',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./graph-elections-results.component.sass']
 })
 export class GraphElectionsResultsComponent implements OnInit {
-
+  @Input() ballotState:boolean;
   constructor() { }
 
   ngOnInit() {

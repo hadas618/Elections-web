@@ -6,6 +6,7 @@ import { CitizenData } from '../CitizenData';
 import { Router } from '@angular/router';
 import { VotingCardDataService } from '../voting-card-data.service';
 import { Observable } from 'rxjs';
+import { WarningComponent } from '../warning/warning.component';
 
 @Component({
   selector: 'app-options-buttons',
@@ -15,6 +16,7 @@ import { Observable } from 'rxjs';
 export class OptionsButtonsComponent implements OnInit {
   ballotState$: Observable<boolean>;
   voterState$: Observable<boolean>;
+  electionsResults: string;
   constructor(
     private citizenDataService: CitizenDataService,
     private votingCardDataService: VotingCardDataService,
@@ -25,6 +27,7 @@ export class OptionsButtonsComponent implements OnInit {
   ngOnInit() {
     this.ballotState$ = this.citizenDataService.ballotState$;
     this.voterState$ = this.citizenDataService.voterState$;
+    this.electionsResults = "Intermediate Results";
   }
   openDialog() {
     let citizenData: CitizenData;
@@ -35,7 +38,8 @@ export class OptionsButtonsComponent implements OnInit {
       }
     });
   }
-  calculateResults() {
+  closeBallot() {
+    this.dialogVoter.open(WarningComponent);
     let sumVotes: number;
     let i: number;
     let votesPerSeats: number;
@@ -43,6 +47,7 @@ export class OptionsButtonsComponent implements OnInit {
     sumVotes = 0;
     this.citizenDataService.ballotState = false;
     this.citizenDataService.voterState = false;
+    this.electionsResults = "Finally Results";
     for (i = 0; i < this.votingCardDataService.votingCardList.length; i++)
       sumVotes += this.votingCardDataService.votingCardList[i].numberOfVotes;
     votesPerSeats = sumVotes / 120;

@@ -68,6 +68,7 @@ import { VotingCardResultsComponent } from './voting-card-results/voting-card-re
 import { DetailsElectionsResultsComponent } from './details-elections-results/details-elections-results.component';
 import { GraphElectionsResultsComponent } from './graph-elections-results/graph-elections-results.component';
 import { VotingCardsListComponent } from './voting-cards-list/voting-cards-list.component';
+import { WarningComponent } from './warning/warning.component';
 
 @NgModule({
   declarations: [
@@ -89,11 +90,13 @@ import { VotingCardsListComponent } from './voting-cards-list/voting-cards-list.
     VotingCardResultsComponent,
     DetailsElectionsResultsComponent,
     GraphElectionsResultsComponent,
-    VotingCardsListComponent
+    VotingCardsListComponent,
+    WarningComponent
   ],
   entryComponents: [
     VotingCardChosenComponent,
-    UpdateVoterComponent
+    UpdateVoterComponent,
+    WarningComponent
   ],
   imports: [
     BrowserModule,

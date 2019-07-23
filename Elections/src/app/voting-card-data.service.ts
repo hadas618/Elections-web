@@ -16,7 +16,9 @@ export class VotingCardDataService {
                            {letter: 'g', numberOfVotes: 500, numberOfSeats: 2},
                            {letter: 'h', numberOfVotes: 500, numberOfSeats: 2},
                            {letter: 'i', numberOfVotes: 300, numberOfSeats: 5},
-                           {letter: 'j', numberOfVotes: 800, numberOfSeats: 8}
+                           {letter: 'j', numberOfVotes: 800, numberOfSeats: 8},
+                           {letter: 'k', numberOfVotes: 800, numberOfSeats: 8},
+                           {letter: 'l', numberOfVotes: 800, numberOfSeats: 8}
                           ];
   }
   getVotingCardList() {

@@ -1,8 +1,1 @@
-<div alt="Avatar">
-    <div class="container">
-      <!-- <a [routerLink]="votingCard.letter" (click)="openDialog()" *ngFor="let votingCard of votingCardList"> -->
-          <app-voting-card [votingCard]="votingCard" [visibleResults]="visibleResults" (click)="openDialog(votingCard.letter)" *ngFor="let votingCard of votingCardList"></app-voting-card>
-      <!-- </a> -->
-        <!-- <router-outlet></router-outlet> -->
-    </div>
-  </div>
+<app-voting-cards-list [visibleResults]="visibleResults" [enableClick]="enableClick"></app-voting-cards-list>

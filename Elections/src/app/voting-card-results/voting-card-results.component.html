@@ -1,7 +1,1 @@
-<div alt="Avatar">
-  <div class="container">
-      <button mat-button *ngFor="let votingCard of votingCardResultsList">
-        <app-voting-card [votingCard]="votingCard" [visibleResults]="visibleResults"></app-voting-card>
-      </button>
-  </div>
-</div>
+<app-voting-cards-list [visibleResults]="visibleResults" [enableClick]="enableClick"></app-voting-cards-list>

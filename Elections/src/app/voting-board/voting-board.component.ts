@@ -10,19 +10,12 @@ import { VotingCardChosenComponent } from '../voting-card-chosen/voting-card-cho
   styleUrls: ['./voting-board.component.scss']
 })
 export class VotingBoardComponent implements OnInit {
-  votingCardList: VotingCard[];
-  dialogRef: MatDialogRef<VotingCardChosenComponent>;
   visibleResults: boolean;
-  constructor(private votingCardDataService: VotingCardDataService, public dialog: MatDialog ) { }
+  enableClick: boolean;
+  constructor() { }
 
   ngOnInit() {
-    this.votingCardList = this.votingCardDataService.getVotingCardList();
     this.visibleResults= false;
+    this.enableClick = true;
   }
-  openDialog(letter: string) {
-    this.dialog.open(VotingCardChosenComponent, {
-      data: {
-        letter }
-      });
-    }
 }

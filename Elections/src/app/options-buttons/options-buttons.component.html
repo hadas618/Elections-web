@@ -10,14 +10,14 @@
     Update Voter
   </button>
   <button
-    id="calculateResultsBtn"
+    id="closeBallotBtn"
     class="btn option-btn"
     mat-stroked-button
     color="primary"
-    (click)="calculateResults()"
+    (click)="closeBallot()"
     [disabled]="!(ballotState$ | async)"
   >
-    Calculate Results
+    Close Ballot
   </button>
   <button
     id="resultsOfElectionsBtn"
@@ -26,6 +26,6 @@
     color="primary"
     (click)="openElectionsResults()"
   >
-    Results of Elections
+      {{ electionsResults }}
   </button>
 </div>

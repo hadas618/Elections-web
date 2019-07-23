@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { VotingCard } from '../votingCard';
 import { VotingCardDataService } from '../voting-card-data.service';
 
@@ -8,14 +8,17 @@ import { VotingCardDataService } from '../voting-card-data.service';
   styleUrls: ['./voting-card-results.component.sass']
 })
 export class VotingCardResultsComponent implements OnInit {
+  @Input() ballotState:boolean;
   votingCardResultsList: VotingCard[];
   source: string;
   visibleResults: boolean;
+  enableClick: boolean;
   constructor(private votingCardDataService: VotingCardDataService) { }
 
   ngOnInit() {
     this.votingCardResultsList = this.votingCardDataService.getVotingCardList();
-    this.visibleResults = true;
+    this.visibleResults = !this.ballotState;
+    this.enableClick = false;
   }
 
 }
