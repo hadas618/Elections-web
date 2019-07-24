@@ -15,8 +15,6 @@ import { AlertComponent } from './alert/alert.component';
 import { VotingCardComponent } from './voting-card/voting-card.component';
 import { VotingCardChosenComponent } from './voting-card-chosen/voting-card-chosen.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { SearchFieldsComponent } from './search-fields/search-fields.component';
-import { SingleSearchFieldComponent } from './single-search-field/single-search-field.component';
 import { OptionsButtonsComponent } from './options-buttons/options-buttons.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 
@@ -37,7 +35,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-//import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -69,6 +66,9 @@ import { DetailsElectionsResultsComponent } from './details-elections-results/de
 import { GraphElectionsResultsComponent } from './graph-elections-results/graph-elections-results.component';
 import { VotingCardsListComponent } from './voting-cards-list/voting-cards-list.component';
 import { WarningComponent } from './warning/warning.component';
+import {AccordionModule} from 'primeng/accordion';
+import {ChartModule} from 'primeng/chart';
+
 
 @NgModule({
   declarations: [
@@ -80,8 +80,6 @@ import { WarningComponent } from './warning/warning.component';
     AlertComponent,
     VotingCardComponent,
     VotingCardChosenComponent,
-    SearchFieldsComponent,
-    SingleSearchFieldComponent,
     OptionsButtonsComponent,
     SearchResultsComponent,
     ExitVotingComponent,
@@ -106,6 +104,8 @@ import { WarningComponent } from './warning/warning.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
+    AccordionModule,
+    ChartModule,
 /** new */
     A11yModule,
     CdkStepperModule,

@@ -24,5 +24,8 @@ td, th {
 }
 
 .margin-table {
+  margin-top: 15px;
   margin-bottom: 15px;
+  margin-left: 2%;
+  margin-right: 2%;
 }

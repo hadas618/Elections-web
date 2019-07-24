@@ -234,11 +234,11 @@ export class CitizenDataService {
     }
   ];
   private subjectSearchResults: BehaviorSubject<CitizenData[]> = new BehaviorSubject([]);
-  private initialBallotState: boolean = true;
+  private initialBallotState = true;
   private subjectBallotState: BehaviorSubject<boolean> = new BehaviorSubject(
     this.initialBallotState
   );
-  private initialVoterState: boolean = false;
+  private initialVoterState = false;
   private subjectVoterState: BehaviorSubject<boolean> = new BehaviorSubject(
     this.initialVoterState
   );
@@ -246,11 +246,10 @@ export class CitizenDataService {
   private subjectChooseupdateVoter: BehaviorSubject<CitizenData> = new BehaviorSubject(
     this.initialChooseUpdateVoter);
   constructor() {
-    let savedData = localStorage.getItem('searchResults');
+    const savedData = localStorage.getItem('searchResults');
     if (!savedData) {
       localStorage.setItem('searchResults', JSON.stringify(this.initialSearchResults));
       this.subjectSearchResults.next(this.initialSearchResults);
-      
     } else {
       this.subjectSearchResults.next(JSON.parse(savedData));
     }
@@ -285,6 +284,6 @@ export class CitizenDataService {
     this.ballotState$.subscribe(data => {
       ballotState = data;
     });
-    this.subjectVoterState.next(voterState&&ballotState);
+    this.subjectVoterState.next(voterState && ballotState);
   }
 }

@@ -1,3 +1,31 @@
-<p>
-  graph-elections-results works!
-</p>
+<!-- <button class="btn primay-btn" (click)="changeType()">{{ graphType }}</button>
+<div class="charts">
+  <p-chart
+    [type]="graphType"
+    [data]="data"
+    width="400px"
+    height="400px"
+    #chart
+  ></p-chart>
+</div> -->
+
+<div class="charts-results">
+  <div class="chart">
+    <p-chart
+      type="pie"
+      [data]="data"
+      width="500px"
+      height="500px"
+      #chart
+    ></p-chart>
+  </div>
+  <div class="chart">
+    <p-chart
+      type="bar"
+      [data]="data"
+      width="500px"
+      height="500px"
+      #chart
+    ></p-chart>
+  </div>
+</div>
