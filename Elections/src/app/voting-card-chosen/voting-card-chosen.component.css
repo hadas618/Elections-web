@@ -1,0 +1,59 @@
+
+.buttons {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 0%;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 100%;
+
+}
+
+.OKButton {
+  background-color: #008CBA;
+  color: black;
+  border: 2px solid #008CBA;
+  width:48%;
+  margin-right: 2%;
+}
+
+.OKButton:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.CancelButton {
+  background-color: white;
+  color: black;
+  /* border: 2px solid rgb(213, 216, 218); */
+  width:48%;
+}
+
+.CancelButton:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.letter{
+  color: #008CBA;
+  font-size: 200%;
+}
+.header{
+  height: 50px;
+  width: 100%;
+  background-color: #008CBA;
+  background-image: url("../../assets/logo.png");
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+mat-card-actions{
+display: flex;
+}
+.mat-dialog-container{
+  padding: 0px;
+}

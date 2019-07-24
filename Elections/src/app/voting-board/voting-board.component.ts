@@ -15,7 +15,7 @@ export class VotingBoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.visibleResults= false;
+    this.visibleResults = false;
     this.enableClick = true;
   }
 }

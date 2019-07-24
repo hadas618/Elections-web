@@ -8,7 +8,7 @@ import { DialogData } from '../DialogData';
 @Component({
   selector: 'app-voting-card-chosen',
   templateUrl: './voting-card-chosen.component.html',
-  styleUrls: ['./voting-card-chosen.component.sass']
+  styleUrls: ['./voting-card-chosen.component.css']
 })
 export class VotingCardChosenComponent implements OnInit {
 votingCardList: VotingCard[];
