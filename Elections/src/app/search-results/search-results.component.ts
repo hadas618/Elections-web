@@ -6,6 +6,8 @@ import { CitizenData } from '../CitizenData';
 import { CitizenDataService } from '../citizen-data.service';
 import { FormControl } from '@angular/forms';
 import { Subscription, Observable } from 'rxjs';
+import { UpdateVoterComponent } from '../update-voter/update-voter.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-search-results',
@@ -13,7 +15,7 @@ import { Subscription, Observable } from 'rxjs';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit, OnDestroy {
-private subs: Subscription;
+  private subs: Subscription;
   displayedColumns: string[] = [
     'id',
     'firstName',
@@ -40,11 +42,13 @@ private subs: Subscription;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private citizenDataService: CitizenDataService) {
-  }
+  constructor(
+    private citizenDataService: CitizenDataService,
+    private dialogVoter: MatDialog
+  ) {}
 
   ngOnInit() {
-    this.subs =  this.citizenDataService.searchResults$.subscribe(data => {
+    this.subs = this.citizenDataService.searchResults$.subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
     });
     this.dataSource.paginator = this.paginator;
@@ -90,7 +94,7 @@ private subs: Subscription;
     this.dataSource.filterPredicate = this.customFilterPredicate();
   }
   ngOnDestroy(): void {
-   this.subs.unsubscribe();
+    this.subs.unsubscribe();
   }
   customFilterPredicate() {
     const myFilterPredicate = (data: CitizenData, filter: string): boolean => {
@@ -129,16 +133,11 @@ private subs: Subscription;
     };
     return myFilterPredicate;
   }
-  dataChanging() {
-    if (
-      this.dataSource.filteredData.length === 1 &&
-      !this.dataSource.filteredData[0].vote
-    ) {
-      this.citizenDataService.voterState = true;
-      this.citizenDataService.setChooseUpdateVoter(
-        this.dataSource.filteredData[0]
-      );
-    } else
-      this.citizenDataService.voterState = false;
+  selectVoter(voter: CitizenData) {
+    this.dialogVoter.open(UpdateVoterComponent, {
+      data: {
+        citizenData: voter
+      }
+    });
   }
 }

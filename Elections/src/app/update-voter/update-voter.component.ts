@@ -18,25 +18,24 @@ export class UpdateVoterComponent implements OnInit {
               private dialogRef: MatDialogRef<UpdateVoterComponent>,
               private route: ActivatedRoute,
               private router: Router,
-              private citizenDataService:CitizenDataService) {
+              private citizenDataService: CitizenDataService) {
    }
 
   ngOnInit() {
-    this.citizenData=this.data.citizenData;
+    this.citizenData = this.data.citizenData;
     this.okState = true;
   }
 
-  okChoose()
-  {
+  okChoose() {
     this.citizenDataService.voterState = false;
     this.okState = false;
     this.citizenDataService.updateVoter(this.citizenData.id);
     this.returnUrl = '/voting-board';
-    //this.router.navigate([]).then(result => {  window.open(this.returnUrl, '_blank'); });
+    // this.router.navigate([]).then(result => {  window.open(this.returnUrl, '_blank'); });
     this.router.navigate([this.returnUrl]);
     this.dialogRef.close();
   }
-  cancelChoose(){
+  cancelChoose() {
     this.dialogRef.close();
   }
 }

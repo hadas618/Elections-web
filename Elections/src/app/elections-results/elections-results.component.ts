@@ -5,12 +5,12 @@ import { CitizenDataService } from '../citizen-data.service';
 @Component({
   selector: 'app-elections-results',
   templateUrl: './elections-results.component.html',
-  styleUrls: ['./elections-results.component.sass']
+  styleUrls: ['./elections-results.component.scss']
 })
 export class ElectionsResultsComponent implements OnInit, OnDestroy {
   ballotState: boolean;
   ballotStateSubscribe: Subscription;
-  constructor(private citizenDataService:CitizenDataService) { }
+  constructor(private citizenDataService: CitizenDataService) { }
 
   ngOnInit() {
     this.ballotStateSubscribe =  this.citizenDataService.ballotState$.subscribe(data => {
@@ -18,7 +18,7 @@ export class ElectionsResultsComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy() {
-    this.ballotStateSubscribe.unsubscribe;
+    this.ballotStateSubscribe.unsubscribe();
   }
-  
+
 }
