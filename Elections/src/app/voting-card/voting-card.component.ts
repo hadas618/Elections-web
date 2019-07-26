@@ -15,14 +15,5 @@ export class VotingCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // this.votingCardData.getVotingCard(path)
-    //     .subscribe(
-    //         votingCard => {
-    //             this.votingCard = this.votingCardData();
-    //         },
-    //         err => {
-    //             console.log(err);
-    //         }
-    //     );
   }
 }

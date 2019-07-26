@@ -246,11 +246,12 @@ export class CitizenDataService {
   private subjectChooseupdateVoter: BehaviorSubject<CitizenData> = new BehaviorSubject(
     this.initialChooseUpdateVoter);
   constructor() {
-    const savedData = localStorage.getItem('searchResults');
+    const savedData = localStorage.getItem('citizenData');
     if (!savedData) {
-      localStorage.setItem('searchResults', JSON.stringify(this.initialSearchResults));
+      localStorage.setItem('citizenData', JSON.stringify(this.initialSearchResults));
       this.subjectSearchResults.next(this.initialSearchResults);
     } else {
+      this.initialSearchResults = JSON.parse(savedData);
       this.subjectSearchResults.next(JSON.parse(savedData));
     }
   }
@@ -264,7 +265,7 @@ export class CitizenDataService {
     this.initialSearchResults.find(
       citizenData => citizenData.id === citizenDataId
     ).vote = true;
-    localStorage.setItem('searchResults', JSON.stringify(this.initialSearchResults));
+    localStorage.setItem('citizenData', JSON.stringify(this.initialSearchResults));
     this.subjectSearchResults.next(this.initialSearchResults);
   }
   get searchResults$(): Observable<CitizenData[]> {

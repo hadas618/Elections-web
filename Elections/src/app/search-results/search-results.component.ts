@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class SearchResultsComponent implements OnInit, OnDestroy {
   private subs: Subscription;
+  ballotState$: Observable<boolean>;
   displayedColumns: string[] = [
     'id',
     'firstName',
@@ -51,6 +52,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.subs = this.citizenDataService.searchResults$.subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
     });
+    this.ballotState$ = this.citizenDataService.ballotState$;
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.idFilter = new FormControl();

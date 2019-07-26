@@ -19,8 +19,8 @@ index: string;
     this.votingCardList = votingCardData.getVotingCardList();
     this.letter = data.letter;
    }
-   public open(letter) {
-       this.votingCardList.find(votingCard => votingCard.letter === letter).numberOfVotes++;
+   public open(letter: string) {
+      this.votingCardData.setVoting(letter);
        this.dialogRef.close();
   }
   public logOut() {

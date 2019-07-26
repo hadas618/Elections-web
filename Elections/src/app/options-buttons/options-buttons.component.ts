@@ -40,25 +40,6 @@ export class OptionsButtonsComponent implements OnInit {
   }
   closeBallot() {
     this.dialogVoter.open(WarningComponent);
-    let sumVotes: number;
-    let i: number;
-    let votesPerSeats: number;
-    let numberOfSeats: number;
-    sumVotes = 0;
-    this.citizenDataService.ballotState = false;
-    this.citizenDataService.voterState = false;
-    this.electionsResults = "Finally Results";
-    for (i = 0; i < this.votingCardDataService.votingCardList.length; i++)
-      sumVotes += this.votingCardDataService.votingCardList[i].numberOfVotes;
-    votesPerSeats = sumVotes / 120;
-    for (i = 0; i < this.votingCardDataService.votingCardList.length; i++) {
-      numberOfSeats =
-        this.votingCardDataService.votingCardList[i].numberOfVotes /
-        votesPerSeats;
-      this.votingCardDataService.votingCardList[i].numberOfSeats = Math.floor(
-        numberOfSeats
-      );
-    }
   }
   openElectionsResults() {
     let returnUrl: string;
