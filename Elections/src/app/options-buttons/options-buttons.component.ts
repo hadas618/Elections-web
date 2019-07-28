@@ -27,7 +27,7 @@ export class OptionsButtonsComponent implements OnInit {
   ngOnInit() {
     this.ballotState$ = this.citizenDataService.ballotState$;
     this.voterState$ = this.citizenDataService.voterState$;
-    this.electionsResults = "Intermediate Results";
+    this.electionsResults = "Election's Results";
   }
   openDialog() {
     let citizenData: CitizenData;
