@@ -26,3 +26,26 @@ body {
   font-size: 10pt;
   float: right;
 }
+.mat-form-field-appearance-legacy .mat-form-field-underline{
+  background-color: none!important;
+}
+
+
+.cdk-text-field-autofill-monitored:-webkit-autofill{
+  padding: 6px;
+  border-radius: 5px;
+}
+// .mat-dialog-container {
+//   display: block;
+//   padding: 14px;
+//   border-radius: 4px;
+//   box-sizing: border-box;
+//   overflow: auto;
+//   outline: 0;
+//   width: 40%;
+//   height: 100%;
+//   min-height: inherit;
+//   max-height: inherit;
+//   margin-left: 30%;
+// }
+

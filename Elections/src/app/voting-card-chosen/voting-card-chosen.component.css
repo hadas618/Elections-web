@@ -45,15 +45,40 @@
   height: 50px;
   width: 100%;
   background-color: #008CBA;
-  background-image: url("../../assets/logo.png");
+  background-image: url("../../assets/Election-Vote-2-icon.png");
 }
-.example-button-row button,
-.example-button-row a {
-  margin-right: 8px;
+
+.mat-dialog-container {
+  display: block;
+  padding: 24px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  overflow: auto;
+  outline: 0;
+  width: 40%;
+  height: 100%;
+  min-height: inherit;
+  max-height: inherit;
+  margin-left: 20%;
 }
 mat-card-actions{
 display: flex;
 }
-.mat-dialog-container{
-  padding: 0px;
+
+.example-button-row[_ngcontent-ocx-c7] button[_ngcontent-ocx-c7]:first-child{
+  margin-right: 8px;
+}
+.mat-card>.mat-card-actions:last-child {
+  margin-bottom: 0px;
+  padding-bottom: 0;
+}
+.mat-card-actions {
+  /* margin-left: -8px; */
+  /* margin-right: -8px; */
+  padding: 8px 0;
+}
+.CancelButton[_ngcontent-bvd-c7] {
+  background-color: white;
+  color: black;
+  width: auto;
 }
