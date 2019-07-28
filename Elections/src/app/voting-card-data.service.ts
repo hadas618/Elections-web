@@ -5,21 +5,20 @@ import { VotingCard } from './votingCard';
   providedIn: 'root'
 })
 export class VotingCardDataService {
-  votingCardList: VotingCard[];
+  votingCardList: VotingCard[]=[{ letter: 'A', partyName: 'All of us', numberOfVotes: 320, numberOfSeats: 2 },
+  { letter: 'B', partyName: 'Behind', numberOfVotes: 720, numberOfSeats: 2 },
+  { letter: 'C', partyName: 'Children', numberOfVotes: 400, numberOfSeats: 2 },
+  { letter: 'D', partyName: 'Donations', numberOfVotes: 420, numberOfSeats: 7 },
+  { letter: 'E', partyName: 'Earn', numberOfVotes: 600, numberOfSeats: 2 },
+  { letter: 'F', partyName: 'Fun', numberOfVotes: 500, numberOfSeats: 4 },
+  { letter: 'G', partyName: 'Gamings', numberOfVotes: 400, numberOfSeats: 2 },
+  { letter: 'H', partyName: 'Health', numberOfVotes: 500, numberOfSeats: 2 },
+  { letter: 'I', partyName: 'I', numberOfVotes: 400, numberOfSeats: 5 },
+  { letter: 'J', partyName: 'Jwelery', numberOfVotes: 600, numberOfSeats: 8 },
+  { letter: 'K', partyName: 'Kitan', numberOfVotes: 500, numberOfSeats: 8 },
+  { letter: 'L', partyName: 'Learning', numberOfVotes: 650, numberOfSeats: 8 }
+  ];
   constructor() {
-    this.votingCardList = [{ letter: 'A', partyName: 'All of us', numberOfVotes: 320, numberOfSeats: 2 },
-    { letter: 'B', partyName: 'Behind', numberOfVotes: 720, numberOfSeats: 2 },
-    { letter: 'C', partyName: 'Children', numberOfVotes: 400, numberOfSeats: 2 },
-    { letter: 'D', partyName: 'Donations', numberOfVotes: 420, numberOfSeats: 7 },
-    { letter: 'E', partyName: 'Earn', numberOfVotes: 600, numberOfSeats: 2 },
-    { letter: 'F', partyName: 'Fun', numberOfVotes: 500, numberOfSeats: 4 },
-    { letter: 'G', partyName: 'Gamings', numberOfVotes: 400, numberOfSeats: 2 },
-    { letter: 'H', partyName: 'Health', numberOfVotes: 500, numberOfSeats: 2 },
-    { letter: 'I', partyName: 'I', numberOfVotes: 400, numberOfSeats: 5 },
-    { letter: 'J', partyName: 'Jwelery', numberOfVotes: 600, numberOfSeats: 8 },
-    { letter: 'K', partyName: 'Kitan', numberOfVotes: 500, numberOfSeats: 8 },
-    { letter: 'L', partyName: 'Learning', numberOfVotes: 650, numberOfSeats: 8 }
-    ];
     const savedData = localStorage.getItem('votingCardsData');
     if (!savedData) {
       localStorage.setItem('votingCardsData', JSON.stringify(this.votingCardList));

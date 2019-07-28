@@ -8,7 +8,6 @@ import { LoginComponent } from './login/login.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { VotingCodeComponent } from './voting-code/voting-code.component';
 import { VotersListComponent } from './voters-list/voters-list.component';
 import { VotingBoardComponent } from './voting-board/voting-board.component';
 import { AlertComponent } from './alert/alert.component';
@@ -74,7 +73,6 @@ import {ChartModule} from 'primeng/chart';
   declarations: [
     AppComponent,
     LoginComponent,
-    VotingCodeComponent,
     VotersListComponent,
     VotingBoardComponent,
     AlertComponent,

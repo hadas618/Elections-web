@@ -1,16 +1,11 @@
-<mat-card class="example-card">
-<mat-card-header class="header">
-  <img src="../../assets/Election-Vote-2-icon.png" alt="" style="width:5%; height: 100%;">
-</mat-card-header>
-<h1 mat-dialog-title style="text-align: center">party name</h1>
-
-  <mat-card-content class="card">
-    <div class="letter" style="text-align: center"><b>{{letter}}</b></div>
-    <p style="text-align: center">letter</p>
-  </mat-card-content>
-
-  <mat-card-actions class="example-button-row">
-    <button mat-raised-button color="#008CBA" class="OKButton" (click)="open(letter)">OK</button>
-    <button mat-stroked-button color="#008CBA" class="CancelButton" (click)="logOut()">CANCEL</button>
-  </mat-card-actions>
-</mat-card>
+<h2 mat-dialog-title>Confirm Vote</h2>
+<mat-dialog-content class="mat-typography" align="center">
+  <h3 mat-dialog-title>Are you sure you want to choose</h3>
+  <div class="divLetter">
+    <h1>{{letter}}</h1>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-stroked-button color="primary" (click)="logOut()">Cancel</button>
+  <button mat-button color="primary" class="btn-primary" (click)="open(letter)" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

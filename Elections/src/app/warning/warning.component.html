@@ -1,7 +1,9 @@
-<div class="card" mat-dialog-content>
-  <h3><b>Confirm Close Ballot</b></h3>
-  <h4>You are going to close the ballot</h4>
-  <h3><b>Are you sure you want to continue?</b></h3>
-  <button class="marginButton" mat-raised-button (click)="closeBallot()">OK</button>
-  <button class="marginButton" mat-raised-button (click)="logOut()">Cancel</button>
-</div>
+<h2 mat-dialog-title>Confirm Close Ballot</h2>
+<mat-dialog-content class="mat-typography">
+  <h3 mat-dialog-title>Are you going to close the ballot</h3>
+    <h4><b>Are you sure you want to continue?</b></h4>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-stroked-button color="primary" (click)="logOut()">Cancel</button>
+  <button mat-button color="primary" class="btn-primary" style="color: white;" (click)="closeBallot()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
