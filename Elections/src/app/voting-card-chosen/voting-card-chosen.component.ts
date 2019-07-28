@@ -21,7 +21,8 @@ index: string;
    }
    public open(letter: string) {
       this.votingCardData.setVoting(letter);
-       this.dialogRef.close();
+      this.dialogRef.close();
+      setTimeout(function(){ window.close(); }, 250);
   }
   public logOut() {
     this.dialogRef.close();

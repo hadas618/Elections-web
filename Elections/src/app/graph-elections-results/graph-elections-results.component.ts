@@ -31,7 +31,6 @@ export class GraphElectionsResultsComponent implements OnInit {
                "rgba(54, 162, 235, 0.2)",
                "rgba(153, 102, 255, 0.2)",
                "rgba(201, 203, 207, 0.2)",
-               /**/
                "rgba(255, 70, 140, 0.2)",
                "rgba(255, 170, 70, 0.2)",
                "rgba(255, 212, 92, 0.2)",
@@ -46,7 +45,6 @@ export class GraphElectionsResultsComponent implements OnInit {
                "rgb(54, 162, 235)",
                "rgb(153, 102, 255)",
                "rgb(201, 203, 207)",
-               /**/
                "rgb(255, 70, 140)",
                "rgb(255, 170, 70)",
                "rgb(255, 212, 92)",

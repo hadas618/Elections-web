@@ -8,7 +8,7 @@ export class VotingCardDataService {
   votingCardList: VotingCard[];
   constructor() {
     this.votingCardList = [{ letter: 'A', partyName: 'All of us', numberOfVotes: 320, numberOfSeats: 2 },
-    { letter: 'B', partyName: 'Behind', numberOfVotes: 500, numberOfSeats: 2 },
+    { letter: 'B', partyName: 'Behind', numberOfVotes: 720, numberOfSeats: 2 },
     { letter: 'C', partyName: 'Children', numberOfVotes: 400, numberOfSeats: 2 },
     { letter: 'D', partyName: 'Donations', numberOfVotes: 420, numberOfSeats: 7 },
     { letter: 'E', partyName: 'Earn', numberOfVotes: 600, numberOfSeats: 2 },
@@ -17,7 +17,7 @@ export class VotingCardDataService {
     { letter: 'H', partyName: 'Health', numberOfVotes: 500, numberOfSeats: 2 },
     { letter: 'I', partyName: 'I', numberOfVotes: 400, numberOfSeats: 5 },
     { letter: 'J', partyName: 'Jwelery', numberOfVotes: 600, numberOfSeats: 8 },
-    { letter: 'K', partyName: 'Kitan', numberOfVotes: 720, numberOfSeats: 8 },
+    { letter: 'K', partyName: 'Kitan', numberOfVotes: 500, numberOfSeats: 8 },
     { letter: 'L', partyName: 'Learning', numberOfVotes: 650, numberOfSeats: 8 }
     ];
     const savedData = localStorage.getItem('votingCardsData');

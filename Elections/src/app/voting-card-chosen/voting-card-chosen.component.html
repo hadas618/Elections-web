@@ -1,17 +1,15 @@
 <mat-card class="example-card">
-<mat-card-header class="header">
-  <!-- <img src="./assets/logo.png" alt=""> -->
-</mat-card-header>
-<h1 mat-dialog-title style="text-align: center">party name</h1>
+  <mat-card-header class="header">
+  </mat-card-header>
+  <h1 mat-dialog-title style="text-align: center">party name</h1>
 
-<mat-card-content class="card">
-  <div class="letter" style="text-align: center"><b>{{letter}}</b></div>
-  <p style="text-align: center">letter</p>
-</mat-card-content>
+  <mat-card-content class="card">
+    <div class="letter" style="text-align: center"><b>{{letter}}</b></div>
+    <p style="text-align: center">letter</p>
+  </mat-card-content>
 
-  <mat-card-actions class="example-button-row" >
-    <button mat-raised-button color="#008CBA" class="OKButton"(click)="open(letter)">OK</button>
+  <mat-card-actions class="example-button-row">
+    <button mat-raised-button color="#008CBA" class="OKButton" (click)="open(letter)">OK</button>
     <button mat-stroked-button color="#008CBA" class="CancelButton" (click)="logOut()">CANCEL</button>
   </mat-card-actions>
 </mat-card>
-

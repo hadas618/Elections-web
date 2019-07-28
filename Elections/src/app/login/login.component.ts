@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
   });
 
-  // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
@@ -48,7 +47,6 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
-    // stop here if form is invalid
     if (this.loginForm.invalid) {
           return;
     }
@@ -72,7 +70,9 @@ export class LoginComponent implements OnInit {
         this.valid = false;
       }
     } else {
-      this.returnUrl = '/voting-code';
+      this.alertService.error('error');
+        this.loading = false;
+        this.valid = false;
     }
     this.router.navigate([this.returnUrl]);
   }

@@ -14,7 +14,7 @@ export class CitizenDataService {
       lastName: 'Dahan',
       address: 'Harakefet 18',
       city: 'Holon',
-      vote: true
+      vote: false
     },
     {
       id: '204466700',
@@ -30,7 +30,7 @@ export class CitizenDataService {
       lastName: 'Levy',
       address: 'Hahadas Ish 2',
       city: 'Holon',
-      vote: true
+      vote: false
     },
     {
       id: '121212123',
@@ -38,7 +38,7 @@ export class CitizenDataService {
       lastName: 'Moshkowitz',
       address: 'Hashaked 12',
       city: 'Haifa',
-      vote: true
+      vote: false
     },
     {
       id: '258963145',
@@ -54,7 +54,7 @@ export class CitizenDataService {
       lastName: 'Bitan',
       address: 'Hatamar 11',
       city: 'Haifa',
-      vote: true
+      vote: false
     },
     {
       id: '204466785',
@@ -62,7 +62,7 @@ export class CitizenDataService {
       lastName: 'Grudthinsky',
       address: 'Yehuda Halevy 18',
       city: 'Haifa',
-      vote: true
+      vote: false
     },
     {
       id: '3256981',
@@ -86,7 +86,7 @@ export class CitizenDataService {
       lastName: 'Gaukchman',
       address: 'Harav Shach 3',
       city: 'Jerusalem',
-      vote: true
+      vote: false
     },
     {
       id: '481569237',
@@ -243,8 +243,6 @@ export class CitizenDataService {
     this.initialVoterState
   );
   private initialChooseUpdateVoter: CitizenData;
-  private subjectChooseupdateVoter: BehaviorSubject<CitizenData> = new BehaviorSubject(
-    this.initialChooseUpdateVoter);
   constructor() {
     const savedData = localStorage.getItem('citizenData');
     if (!savedData) {
@@ -266,7 +264,6 @@ export class CitizenDataService {
       citizenData => citizenData.id === citizenDataId
     ).vote = true;
     localStorage.setItem('citizenData', JSON.stringify(this.initialSearchResults));
-    this.subjectSearchResults.next(this.initialSearchResults);
   }
   get searchResults$(): Observable<CitizenData[]> {
     return this.subjectSearchResults.asObservable();

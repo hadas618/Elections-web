@@ -13,9 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'voting-code', component: VotingCodeComponent },
   { path: 'voters-list', component: VotersListComponent },
-  { path: 'voting-board', component: VotingBoardComponent/*, children: [
-     { path: ':votingLetter', component: VotingCardChosenComponent}
-] */},
+  { path: 'voting-board', component: VotingBoardComponent },
   { path: 'elections-results', component: ElectionsResultsComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }
