@@ -55,7 +55,9 @@ export class VotingCardDataService {
     let i: number;
     let votesPerSeats: number;
     let numberOfSeats: number;
+    let savedData = localStorage.getItem('votingCardsData');
     sumVotes = 0;
+    this.votingCardList = JSON.parse(savedData);
     for (i = 0; i < this.votingCardList.length; i++)
       sumVotes += this.votingCardList[i].numberOfVotes;
     votesPerSeats = sumVotes / 120;
