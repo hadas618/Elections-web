@@ -263,6 +263,7 @@ export class CitizenDataService {
     this.initialSearchResults.find(
       citizenData => citizenData.id === citizenDataId
     ).vote = true;
+    this.subjectSearchResults.next(this.initialSearchResults);
     localStorage.setItem('citizenData', JSON.stringify(this.initialSearchResults));
   }
   get searchResults$(): Observable<CitizenData[]> {
